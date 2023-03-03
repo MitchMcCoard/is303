@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Drinks</title>
+</head>
+<body>
+    <!--This is the display page where we can view our dynamically built table.-->
+
+    <!--You will acess the data through the variable records (which is an array)-->
+
+    <table style="margin: auto;">
+        <thead>
+          <tr>
+            <th>Drink id</th>         <!--Change these attributes to match the problem-->
+            <th>Drink Name</th>
+            <th>Drink Ingredients</th>
+            <th>Drink Price</th>
+            <th>Drink Rating</th>
+            <th>Drink Sweetness</th>
+            <th>Tasted</th>
+            <th></th> <!--This is for the delete button-->
+            <th></th><!--<th></th> This is for the edit button-->
+          </tr>
+        </thead>
+        <tbody>
+          <% for(iCount  = 0; iCount < records.length; iCount++) 
+          { 
+            if( iCount % 2 == 0)
+            { %>
+      
+              <tr>
+                <td><%= records[iCount].drink_id %></td>
+                <td><%= records[iCount].drink_name %></td>
+                <td><%= records[iCount].drink_ingredients %></td>
+                <td><%= records[iCount].drink_price %></td>
+                <td><%= records[iCount].drink_rating %></td>
+                <td><%= records[iCount].drink_sweetness %></td>
+                <td><%= records[iCount].tasted %></td>
+                <td>
+                  <form action="/deleteRecord/<%= records[iCount].drink_id %>" method="POST">
+                      <input type="submit" name="Delete" value="Delete" />
+                  </form>
+                </td>
+                <td>
+                    <form action="/editDrink" method="GET">
+                        <input type="hidden" name="drink_id" value="<%= records[iCount].drink_id %>">
+                        <input type="submit" name="Edit" value="Edit">    
+                    </form>
+                </td>
+              </tr>
+      
+            <%}
+            else
+           { %>
+             <tr class="blue">
+                <td><%= records[iCount].drink_id %></td>
+                <td><%= records[iCount].drink_name %></td>
+                <td><%= records[iCount].drink_ingredients %></td>
+                <td><%= records[iCount].drink_price %></td>
+                <td><%= records[iCount].drink_rating %></td>
+                <td><%= records[iCount].drink_sweetness %></td>
+                <td><%= records[iCount].tasted %></td>
+                <td>
+                    <form action="/deleteRecord/<%= records[iCount].drink_id %>" method="POST">
+                        <input type="submit" name="Delete" value="Delete" />
+                    </form>
+                </td>
+                <td>
+                    <form action="/editDrink" method="GET">
+                        <input type="hidden" name="drink_id" value="<%= records[iCount].drink_id %>">
+                        <input type="submit" name="Edit" value="Edit">    
+                    </form>    
+                </td>   
+              </tr>
+            <% }
+          } %>
+        </tbody>
+    </table>
+    <form action="/" method="GET">
+        <input type="submit" name="Home" value="Home">    
+    </form>  
+    <!--You should change the name of records variable to be more descriptive when you find out what it is. Line 45 Index.js-->
+</body>
+</html>

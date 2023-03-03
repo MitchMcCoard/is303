@@ -1,0 +1,17 @@
+{
+  "name": "is303w22final",
+  "version": "1.0.0",
+  "description": "This is the final exam, yay!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mitchell McCoard",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.3",
+    "knex": "^1.0.6",
+    "pg": "^8.7.3"
+  }
+}

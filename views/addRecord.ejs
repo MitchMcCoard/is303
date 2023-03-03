@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add a Record</title>
+</head>
+<body>
+    <!--This has the form which has blank inputs so that you can specify what to add-->
+    <!--These names need to match the req.body.blank in index.js-->
+    <form action="/addRecord" method="POST" style="margin: auto;">
+        <fieldset style="margin: auto;">
+          <label>First Name: </label> &nbsp;
+            <input type="text" name="first_name"><br><br>
+          <label>Last Name: </label> &nbsp; 
+            <input type="text" name="last_name"><br><br>
+          <label>Date Missing: </label> &nbsp; 
+            <input type="text" name="date_missing"><br><br>
+          <label>Age at Missing: </label> &nbsp; 
+            <input type="text" name="age_at_missing"><br><br>
+          <label>City: </label> &nbsp; 
+            <input type="text" name="city"><br><br>
+          <label>State: </label> &nbsp; 
+            <input type="text" name="state"><br><br>
+          <label>Gender: </label> &nbsp; 
+            <input type="text" name="gender"><br><br>
+          <label>Race: </label> &nbsp; 
+            <input type="text" name="race"><br><br>
+          <button type="submit">Add New Record</button>
+        </fieldset>
+      </form>
+    <!--Then this submit button will have the post method with the action of addRecord. This will take the data and actually add the data-->
+</body>
+</html>

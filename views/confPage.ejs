@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmation</title>
+</head>
+<body onload="display()">
+    <p id="myOutput"></p>
+
+    <form action="/displayDrinks" method="GET">
+        <input type="submit" name="Display" value="Display Drinks" />
+    </form>
+
+    <form action="/" method="GET">
+        <input type="submit" name="HOME" value="HOME" />
+    </form>
+
+    <script>
+
+        function display()
+        {
+            let action = "test";
+            //Use the dom to update the action and dynamically display the confirmation page
+            
+            let sOutput =  "Your drink was " + action + " successfully";
+            document.getElementById("myOutput").innerHTML = sOutput;
+        }
+
+    </script>
+</body>
+</html>

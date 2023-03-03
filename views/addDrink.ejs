@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Record</title>
+</head>
+<body>
+  
+    <form action="/addDrink" method="POST">
+        <fieldset style="width: 200px; margin: auto;">
+          <legend>Edit Drink:</legend>
+              <input type="hidden" id="drink_id" name="drink_id" value="">
+              <label for="Name">Name:</label>
+              <input type="text" id="Name" name="Name" value="">
+              <br><br>
+              <label for="drink_ingredients">Drink Ingredients:</label>
+              <input type="text" id="drink_ingredients" name="drink_ingredients" value="">
+              <br><br>
+              <label for="drink_price">Drink Price:</label>
+              <input type="text" id="drink_price" name="drink_price" value="">
+              <br><br>
+              <label for="drink_ranking">Drink Ranking:</label>
+              <input type="number" id="drink_ranking" name="drink_ranking" value=""> <!--How do I put a limit of 0-10 on this?-->
+              <br><br>
+              Drink Sweetness:<br>
+              <input type="radio" id="High" name="drink_sweetness" value="">
+              <label for="High"> High</label>
+
+              <input type="radio" id="Medium" name="drink_sweetness" value="" checked>
+              <label for="Medium"> Medium</label>
+
+              <input type="radio" id="Low" name="drink_sweetness" value="">
+              <label for="Low"> Low</label>
+              
+              <br><br>
+              <label for="tasted">tasted:</label>
+              <input type="checkbox" id="tasted" name="tasted" value=""><!--Do I need to write some javaScript for the checkbox to check if checked?-->
+              <br><br>
+              <button type="submit">Save</button>
+        </fieldset>
+      </form>
+
+    <!--When you hit this sumbit button it packages it up and then sends it to the post method to update the record-->
+    
+</body>
+</html>

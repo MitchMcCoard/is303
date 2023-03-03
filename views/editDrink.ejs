@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Your Drink</title>
+</head>
+<body>
+
+
+    <form action="/editDrink" method="POST">
+        <fieldset style="width: 200px; margin: auto;">
+          <legend>Edit Drink:</legend>
+              <input type="hidden" id="drink_id" name="drink_id" value="<%= drink[0].drink_id %>">
+              <label for="Name">Name:</label>
+              <input type="text" id="Name" name="Name" value="<%= drink[0].drink_name %>">
+              <br><br>
+              <label for="drink_ingredients">Drink Ingredients:</label>
+              <input type="text" id="drink_ingredients" name="drink_ingredients" value="<%= drink[0].drink_ingredients %>">
+              <br><br>
+              <label for="drink_price">Drink Price:</label>
+              <input type="text" id="drink_price" name="drink_price" value="<%= drink[0].drink_price %>">
+              <br><br>
+              <label for="drink_ranking">Drink Ranking:</label>
+              <input type="number" id="drink_ranking" name="drink_ranking" value="<%= drink[0].drink_ranking %>"> <!--How do I put a limit of 0-10 on this?-->
+              <br><br>
+              Drink Sweetness:<br>
+              <input type="radio" id="High" name="drink_sweetness" value="<%= drink[0].drink_sweetness %>">
+              <label for="High"> High</label>
+
+              <input type="radio" id="Medium" name="drink_sweetness" value="<%= drink[0].drink_sweetness %>" checked>
+              <label for="Medium"> Medium</label>
+
+              <input type="radio" id="Low" name="drink_sweetness" value="<%= drink[0].drink_sweetness %>">
+              <label for="Low"> Low</label>
+              
+              <br><br>
+              <label for="tasted">tasted:</label>
+              <input type="checkbox" id="tasted" name="tasted" value="<%= drink[0].tasted %>"><!--Do I need to write some javaScript for the checkbox to check if checked?-->
+              <br><br>
+              <button type="submit">Save</button>
+        </fieldset>
+      </form>
+</body>
+</html>
